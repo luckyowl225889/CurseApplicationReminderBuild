@@ -3,7 +3,7 @@ local L = MDT.L
 local dungeonIndex = -1
 
 MDT.dungeonEnemies[dungeonIndex] = {
-  {
+  [1] = {
     ["clones"] = {
     };
     ["reaping"] = -1;
@@ -20,7 +20,7 @@ MDT.dungeonEnemies[dungeonIndex] = {
     ["characteristics"] = {
     };
   },
-  {
+  [2] = {
     ["clones"] = {
     };
     ["reaping"] = -1;
@@ -37,7 +37,7 @@ MDT.dungeonEnemies[dungeonIndex] = {
     ["characteristics"] = {
     };
   },
-  {
+  [3] = {
     ["clones"] = {
     };
     ["reaping"] = -1;
@@ -54,7 +54,7 @@ MDT.dungeonEnemies[dungeonIndex] = {
     ["characteristics"] = {
     };
   },
-  {
+  [4] = {
     ["clones"] = {
     };
     ["reaping"] = -1;
@@ -71,7 +71,7 @@ MDT.dungeonEnemies[dungeonIndex] = {
     ["characteristics"] = {
     };
   },
-  {
+  [5] = {
     ["clones"] = {
     };
     ["reaping"] = -1;

@@ -1,9 +1,9 @@
 local MDT = MDT
 local L = MDT.L
-local dungeonIndex = -1
+local dungeonIndex = -2
 
 MDT.dungeonEnemies[dungeonIndex] = {
-  {
+  [1] = {
     ["clones"] = {
     };
     ["reaping"] = -1;
@@ -20,7 +20,7 @@ MDT.dungeonEnemies[dungeonIndex] = {
     ["characteristics"] = {
     };
   },
-  {
+  [2] = {
     ["clones"] = {
     };
     ["reaping"] = -1;

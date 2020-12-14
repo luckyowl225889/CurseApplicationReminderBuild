@@ -8,9 +8,8 @@ MDT = {
   ["dungeonEnemies"] = {},
 };
 
--- local inspect = require('curse-application-reminder-build/inspect');
-require('curse-application-reminder-build/locale-enUS');
-require("curse-application-reminder-build/MDTTools");
+require('locale-enUS');
+require("MDTTools");
 
 local expansionInfo = {
   ["general"] = {
@@ -268,7 +267,7 @@ local standardValues = {
 local expansionGroups = {};
 
 for dungeonId,dungeonInfo in pairs(dungeonInformations) do
-  require('curse-application-reminder-build/' .. dungeonInfo.file);
+  require(dungeonInfo.file);
   
   if expansionGroups[dungeonInfo.expansion] == nil then
     expansionGroups[dungeonInfo.expansion] = MDT.createExpansionOptions(expansionInfo, dungeonInfo);

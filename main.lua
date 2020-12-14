@@ -93,18 +93,20 @@ function MDT.createTableString(table, depth)
     
     for key,value in pairs(table) do
       if index == key then
-        content = content .. MDT.createIndentation(depth + 1) .. MDT.createTableString(value, depth + 1) .. " -- [" .. index .. "]\n"
+        content = content .. MDT.createIndentation(depth + 1) .. MDT.createTableString(value, depth + 1) .. ", -- [" .. index .. "]\n"
       else
-        content = content .. MDT.createIndentation(depth + 1) .. "[\"" .. key .. "\"] = " .. MDT.createTableString(value, depth + 1) .. "\n"
+        content = content .. MDT.createIndentation(depth + 1) .. "[\"" .. key .. "\"] = " .. MDT.createTableString(value, depth + 1) .. ",\n"
       end
       
       index = index + 1;
     end
     
-    content = content .. MDT.createIndentation(depth) .. "},"
+    content = content .. MDT.createIndentation(depth) .. "}"
   else
     if type(table) == "boolean" then
       content = content .. (table and "true" or "false");
+    elseif type(table) == "string" then
+      content = content .. "\"" .. table .. "\"";
     else
       content = content .. table;
     end

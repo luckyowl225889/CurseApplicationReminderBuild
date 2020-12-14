@@ -136,6 +136,13 @@ local expansionInfo = {
   }
 };
 
+local expansionOrder = {
+  "general",
+  "shadowlands",
+  "bfa",
+  "legion"
+};
+
 local dungeonInformations = {
   -- [[ General
   [ -2 ] = { -- Testing
@@ -378,11 +385,33 @@ for dungeonId,dungeonInfo in pairs(dungeonInformations) do
     table.insert(dungeonOptions.subOptions, MDT.createMobDropdown(mobInfo));
   end
   
-  print(dungeonInfo.name)
-  print(MDT.createTableString(dungeonOptions));
-  -- MDT.createDungeonOptions(dungeonInfo);
-  -- print(inspect(MDT.dungeonEnemies[dungeonId]));
+  table.insert(expansionGroups[dungeonInfo.expansion].subOptions, dungeonOptions);
 end
+
+local curseMobsOptions = {
+  ["collapse"] = false,
+  ["groupType"] = "simple",
+  ["hideReorder"] = true,
+  ["key"] = "curse-mobs",
+  ["limitType"] = "none",
+  ["name"] = "Mob Options",
+  ["nameSource"] = 0,
+  ["size"] = 10,
+  ["subOptions"] = {
+  },
+  ["type"] = "group",
+  ["useCollapse"] = true,
+  ["useDesc"] = false,
+  ["width"] = 1
+};
+
+for i = 1, #expansionOrder do
+  if expansionGroups[expansionOrder[i]] ~= nil then
+    table.insert(curseMobsOptions.subOptions, expansionGroups[expansionOrder[i]]);
+  end
+end
+
+print(MDT.createTableString(curseMobsOptions));
 
 --[[ GROUP
 

@@ -374,10 +374,11 @@ for dungeonId,dungeonInfo in pairs(dungeonInformations) do
   local dungeonOptions = MDT.createDungeonOptions(dungeonInfo);
   
   for mobIndex,mobInfo in pairs(MDT.dungeonEnemies[dungeonId]) do
-    table.insert(dungeonOptions, MDT.createMobToggle(mobInfo));
-    table.insert(dungeonOptions, MDT.createMobDropdown(mobInfo));
+    table.insert(dungeonOptions.subOptions, MDT.createMobToggle(mobInfo));
+    table.insert(dungeonOptions.subOptions, MDT.createMobDropdown(mobInfo));
   end
   
+  print(dungeonInfo.name)
   print(MDT.createTableString(dungeonOptions));
   -- MDT.createDungeonOptions(dungeonInfo);
   -- print(inspect(MDT.dungeonEnemies[dungeonId]));

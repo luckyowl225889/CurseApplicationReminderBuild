@@ -115,8 +115,6 @@ function MDT.createTableString(table, depth)
   return content;
 end
 
-
-local inspect = require('curse-application-reminder-build/inspect');
 require('curse-application-reminder-build/locale-enUS');
 
 local expansionInfo = {
